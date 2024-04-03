@@ -539,6 +539,9 @@ class VulkanContext final : public IContext {
   VkPipeline getVkPipeline(RenderPipelineHandle handle);
 
   uint32_t queryDevices(HWDeviceType deviceType, HWDeviceDesc* outDevices, uint32_t maxOutDevices = 1);
+  void setVkSurface(VkSurfaceKHR vkSurface) {
+    vkSurface_ = vkSurface;
+  }
   lvk::Result initContext(const HWDeviceDesc& desc);
   lvk::Result initSwapchain(uint32_t width, uint32_t height);
 
